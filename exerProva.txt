@@ -1,0 +1,6 @@
+listar o nome do aluno e o nome do curso que o aluno esta matriculado:
+SELECT aluno.nome, aluno.ra ,curso.nome AS curso FROM aluno,matricula,curso WHERE(aluno.ra = matricula.ra) and matricula.codigo = curso.codigo;
+
+exibir o nome de cada curso que teve matriculas e quantos alunos tem matriculados em cada um deles(curso);
+ob:usar cabeçalho para o campo numero de alunos:
+SELECT curso.nome,COUNT(matricula.ra) AS 'numero alunos' FROM curso INNER JOIN matricula on curso.codigo=matricula.codigo GROUP BY matricula.codigo;
